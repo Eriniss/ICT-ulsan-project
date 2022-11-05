@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 import MenuLogo from "../logos/list.svg";
 import HomeLogo from "../logos/house.svg";
 
 const Header = () => {
-  
   return (
     <div>
       <ul className="nav">
-        <img className="logoImg" src={HomeLogo} alt="logo" />
+        <Link to="/"><img className="logoImg" src={HomeLogo} alt="logo" /></Link>
         <li><Link className="menuText" to="/intro">소개글</Link></li>
         <li><Link className="menuText" to="/library">라이브러리</Link></li>
         <li><Link className="menuText" to="/review">독서감상문</Link></li>

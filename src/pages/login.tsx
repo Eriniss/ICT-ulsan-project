@@ -1,5 +1,21 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { Route, Routes } from "react-router-dom";
-import { Request, Response, NextFunction } from "express";
-import { Link } from "react-router-dom";
+import axios from "axios";
+
+const Login = () => {
+  axios
+  .get("http://localhost:4000/login")
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err);
+  }
+  );
+
+  return (
+    <div>
+      <h1>로그인/회원가입 페이지</h1>
+    </div>
+  )
+}
+
+export default Login;

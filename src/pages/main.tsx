@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import styled from "styled-components";
-import { Route, Routes } from "react-router-dom";
 import { Request, Response, NextFunction } from "express";
-import { Link } from "react-router-dom";
 import Carousel from '../components/carousel';
 import WeeklyBooks from "../components/weeklyBooks";
 

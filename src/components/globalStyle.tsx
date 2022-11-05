@@ -47,7 +47,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .login {
-      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: right;
+      margin: 0 2em;
       font-size: 15px;
       text-align: center;
       margin-left: 10%;
@@ -58,8 +61,6 @@ const GlobalStyle = createGlobalStyle`
         margin-right: 0px;
       }
     }
-
-
   }
 
   .logoImg {
