@@ -63,6 +63,9 @@ const Post = () => {
       })
       .then((res) => {
         navigate("/library");
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -76,7 +79,7 @@ const Post = () => {
         placeholder="내용을 입력하세요"
         onChange={(e) => setBody(e.target.value)}
       />
-      <PostButton onClick={handleClickPost}>작성하기</PostButton>
+      <PostButton onClick={handleClickPost} >작성하기</PostButton>
     </Container>
   );
 };
