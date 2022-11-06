@@ -5,9 +5,11 @@ import './App.css';
 import Main from "./pages/main";
 import Intro from "./pages/intro";
 import Library from "./pages/library";
-import Review from "./pages/review";
+import Review from "./pages/reviews";
 import Community from "./pages/community";
 import Login from "./pages/login";
+import Post from "./pages/post";
+import View from "./pages/view";
 
 const App = () => {
   return (
@@ -26,6 +28,9 @@ const App = () => {
           <Route path="/review" element={<Review />} />
           <Route path="/community" element={<Community />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/post" element={<Post />} />
+          <Route path="/view" element={<View />} />
+          <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </BrowserRouter>
       </body>

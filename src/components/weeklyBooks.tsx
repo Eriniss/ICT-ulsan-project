@@ -57,19 +57,19 @@ const BookImg = styled.img`
 function WeeklyBooks() {
   return (
       <Banner>
-        <Title>이주의 책</Title>
+        <Title>이주의 도서</Title>
         <BannerItem>
           <BannerBox>
             <BookImg src={BookImg1}/>
             <h5>나는 나로 살기로 했다</h5>
-            <p>★★★☆</p>
+            <p>★★★☆☆</p>
           </ BannerBox>
         </BannerItem>
         <BannerItem>
           <BannerBox>
             <BookImg src={BookImg2}/>
             <h5>지적 대화를 위한 넓고 얕은 지식</h5>
-            <p>★★★★☆</p>
+            <p>★★★★★</p>
           </ BannerBox>
         </BannerItem>
         <BannerItem>
@@ -83,7 +83,7 @@ function WeeklyBooks() {
           <BannerBox>
             <BookImg src={BookImg4}/>
             <h5>불편한 편의점</h5>
-            <p>★★★★☆</p>
+            <p>★★★☆☆</p>
           </ BannerBox>
         </BannerItem>
         <BannerItem>

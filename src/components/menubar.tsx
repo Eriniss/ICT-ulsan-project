@@ -1,8 +1,8 @@
-import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MenuLogo from "../logos/list.svg";
 import HomeLogo from "../logos/house.svg";
 
-const Header = () => {
+const Menubar = () => {
   return (
     <div>
       <ul className="nav">
@@ -22,4 +22,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default Menubar;

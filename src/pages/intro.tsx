@@ -6,13 +6,19 @@ import Velog from "../logos/blog.svg";
 import Email from "../logos/email.svg";
 const content = require('../content/intro.json');
 
-const introTitle = content.title;
+interface dataType {
+  _id: any;
+  title: string;
+  body: string;
+}
 
-const introBody = content.body.split("\n").map((line: string) => {
+const introTitle: string = content.title;
+
+const introBody: string = content.body.split("\n").map((line: string) => {
   return <p>{line}</p>;
 });
 
-const address = content.address;
+const address: any = content.address;
 
 const Container = styled.div`
   width: 60%;

@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import axios from "axios";
-import { Request, Response, NextFunction } from "express";
 import Carousel from '../components/carousel';
 import WeeklyBooks from "../components/weeklyBooks";
 
