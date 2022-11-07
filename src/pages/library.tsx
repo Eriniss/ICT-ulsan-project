@@ -23,31 +23,15 @@ const AccessPost = styled.button`
 `
 const PostListTitle = styled.div`
   width: 100%;
-  height: 30px;
-  margin: 0;
-  padding: 0px;
-  border: none;
-  border-right: 2px solid #bbbbbb;
-  background-color: #fff;
-  font-size: 20px;
-  vertical-align: center;
-  text-align: left;
-`
-
-const PostListBody = styled.div`
-  width: 100%;
   height: 80px;
   margin: 0;
   padding: 0px;
   border: none;
-  border-bottom: 2px solid #bbbbbb;
-  border-right: 2px solid #bbbbbb;
+  border-bottom: 1px solid #eeeeee;
   background-color: #fff;
   font-size: 20px;
   vertical-align: center;
-  border-radius: 0px 0px 10px 0px;
   text-align: left;
-  font-size: 15px;
 `
 
 interface PostListProps {
@@ -61,14 +45,14 @@ interface PostListProps {
 const PostList = ({data}: PostListProps) => {
   const navigate = useNavigate();
 
-  const handleClickPost = () => {
-    navigate(`/library/${data._id}`);
+  const handleClickView = () => {
+    navigate(`/view/${data._id}`);
   };
 
   return (
     <Container>
-      <PostListTitle onClick={handleClickPost}>{data?.title}</PostListTitle>
-      <PostListBody style={{textAlign: "left"}}>{data?.body}</PostListBody>
+      <PostListTitle onClick={handleClickView}>{data?.title}
+      </PostListTitle>
     </Container>
   )
 }

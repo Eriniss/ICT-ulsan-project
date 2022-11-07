@@ -9,6 +9,8 @@ import Review from "./pages/reviews";
 import Community from "./pages/community";
 import Login from "./pages/login";
 import Post from "./pages/post";
+import Edit from "./pages/edit";
+import View from "./pages/view";
 
 const App = () => {
   return (
@@ -28,6 +30,8 @@ const App = () => {
           <Route path="/community" element={<Community />} />
           <Route path="/login" element={<Login />} />
           <Route path="/post" element={<Post />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/view/:id" element={<View />} />
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
       </BrowserRouter>
