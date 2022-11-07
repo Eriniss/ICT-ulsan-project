@@ -8,7 +8,6 @@ const Container = styled.div`
     height: 100px;
     margin: 20px auto 20px auto;
     padding: 0;
-    background-color: #fff;
 `;
 
 const AccessPost = styled.button`
@@ -16,10 +15,10 @@ const AccessPost = styled.button`
   height: 30px;
   border: 1.5px solid #000;
   border-radius: 15px;
-  background-color: #fff;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+  background-color: #fff;
 `
 const PostListTitle = styled.div`
   width: 100%;
@@ -27,8 +26,7 @@ const PostListTitle = styled.div`
   margin: 0;
   padding: 0px;
   border: none;
-  border-bottom: 1px solid #eeeeee;
-  background-color: #fff;
+  border-bottom: 1px solid #dddddd;
   font-size: 20px;
   vertical-align: center;
   text-align: left;

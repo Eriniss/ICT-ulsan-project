@@ -6,12 +6,6 @@ import Velog from "../logos/blog.svg";
 import Email from "../logos/email.svg";
 const content = require('../content/intro.json');
 
-interface dataType {
-  _id: any;
-  title: string;
-  body: string;
-}
-
 const introTitle: string = content.title;
 
 const introBody: string = content.body.split("\n").map((line: string) => {
@@ -64,6 +58,14 @@ const Address = styled.a`
   color: #707070;
   margin-right: 30px;
 `
+
+const AddressEmail = styled.div`
+  font-size: 15px;
+  text-decoration: none;
+  color: #707070;
+  margin-top: 20px;
+`
+
 const LogoImg = styled.img`
   width: 20px;
   height: 20px;
@@ -81,6 +83,10 @@ const Intro = () => {
     }
     );
 
+    const handleClickEmail = () => {
+      window.open(`mailto:${address.email}`);
+    }
+
     return (
       <Container>
         <IntroImg />
@@ -88,7 +94,7 @@ const Intro = () => {
         <Body>{introBody}</Body>
         <Address href={address.github} target="_blank"><LogoImg src={Github} />깃허브</Address>
         <Address href={address.velog} target="_blank"><LogoImg src={Velog} />벨로그</Address>
-        <Address href={address.email} target="_blank"><LogoImg src={Email} />이메일</Address>
+        <AddressEmail onClick={handleClickEmail}><LogoImg src={Email}/>이메일</AddressEmail>
       </Container>
     )
 }

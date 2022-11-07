@@ -52,6 +52,12 @@ const BookImg = styled.img`
   width: 40%;
   height: 100%;
   margin-bottom: 20px;
+
+  @media (max-width: 1440px) {
+    width: 70%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
 `;
 
 function WeeklyBooks() {
