@@ -46,7 +46,7 @@ const BannerItem = styled.div`
 `;
 
 const BannerBody = styled.p`
-  font-size: 1.5rem;
+  font-size: 15px;
   font-weight: 700;
 `
 
@@ -59,7 +59,7 @@ const BookImg = styled.img`
 function WeeklyBooks() {
   return (
     <Container>
-      <BannerTitle>이주의 도서</BannerTitle>
+      <BannerTitle>📖 이주의 도서</BannerTitle>
       <BannerItem>
         <BookImg src={BookImg1}/>
         <BannerBody>나는 나로 살기로 했다</BannerBody>

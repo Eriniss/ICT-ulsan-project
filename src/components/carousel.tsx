@@ -10,14 +10,21 @@ const BannerTitle = styled.h3`
   color: #fff;
 `;
 
+const Container = styled.div`
+  width: 80%;
+  height: 100%;
+`;
+
 function BannerCarousel() {
   return (
-    <Carousel>
+    <Container>
+    <Carousel style={{marginTop: "20px"}}>
       <Carousel.Item>
         <img
           className="d-block w-100"
           src={Img1}
           alt="First slide"
+          style={{borderRadius: "15px"}}
         />
         <Carousel.Caption>
           <Link style={{textDecoration: "none"}} to="/library"><BannerTitle>라이브러리</BannerTitle></Link>
@@ -29,6 +36,7 @@ function BannerCarousel() {
           className="d-block w-100"
           src={Img2}
           alt="Second slide"
+          style={{borderRadius: "15px"}}
         />
 
         <Carousel.Caption>
@@ -41,6 +49,7 @@ function BannerCarousel() {
           className="d-block w-100"
           src={Img3}
           alt="Third slide"
+          style={{borderRadius: "15px"}}
         />
 
         <Carousel.Caption>
@@ -53,6 +62,7 @@ function BannerCarousel() {
           className="d-block w-100"
           src={Img4}
           alt="Forth slide"
+          style={{borderRadius: "15px"}}
         />
 
         <Carousel.Caption>
@@ -61,6 +71,7 @@ function BannerCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </Container>
   );
 }
 
