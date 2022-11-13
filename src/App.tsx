@@ -36,7 +36,6 @@ const App = () => {
         </Routes>
       </BrowserRouter>
       </body>
-
       <footer>
 
       </footer>

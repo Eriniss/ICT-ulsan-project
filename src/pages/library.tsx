@@ -43,11 +43,6 @@ const PostListTitle = styled.div`
   border-bottom: 1px solid #bbbbbb;
 `
 
-const CreatedAt = styled.div`
-  text-align: left;
-  font-size: 16px;
-`
-
 interface PostListProps {
   data: {
     _id: any;
@@ -59,15 +54,6 @@ interface PostListProps {
 
 const PostList = ({data}: PostListProps) => {
   const navigate = useNavigate();
-  const [date, setDate] = useState<string>("");
-
-  useEffect(() => {
-    const date = new Date(data.createdAt);
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    setDate(`${year}년 ${month}월 ${day}일`);
-  }, [data.createdAt]);
 
   const handleClickView = () => {
     navigate(`/view/${data._id}`);
@@ -76,32 +62,31 @@ const PostList = ({data}: PostListProps) => {
   return (
     <Container>
       <PostListTitle onClick={handleClickView}>{data?.title}</PostListTitle>
-      <CreatedAt>{date}</CreatedAt>
     </Container>
   )
 }
 
 const Library = () => {
   const [postList, setPostList] = useState<any[]>([]);
+  const [countPerPage, setCountPerPage] = useState<number>(10);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPage, setTotalPage] = useState<number>(0);
+  const navigate = useNavigate();
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
-  };
+  }
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/posts?page=${currentPage}`)
-      .then((res) => {
-        setPostList(res.data.data);
-        setTotalPage(res.data.totalPage);
+    axios.get(`http://localhost:3001/posts?_page=${currentPage}&_limit=${countPerPage}`)
+      .then((res: any) => {
+        setPostList(res.data);
+        setTotalPage(Math.ceil(res.headers['x-total-count'] / countPerPage));
       })
       .catch((err) => {
         console.log(err);
       })
-  }, [currentPage]);
-
-  const navigate = useNavigate();
+  }, [currentPage, countPerPage]);
 
   useEffect(() => {
     axios
@@ -120,12 +105,9 @@ const Library = () => {
       {postList.map((post) => (
         <PostList data={post} />
       ))}
-      <PaginationAlign><Pagination
-        color="primary"
-        count={totalPage}
-        page={currentPage}
-        onChange={handlePageChange}
-      /></PaginationAlign>
+      <PaginationAlign>
+        <Pagination count={totalPage} page={currentPage} onChange={handlePageChange} color="primary" showFirstButton showLastButton />
+      </PaginationAlign>
     </Container>
   );
 };

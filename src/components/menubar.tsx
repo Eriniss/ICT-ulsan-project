@@ -5,13 +5,18 @@ import HomeLogo from "../logos/house.svg";
 
 const Container = styled.div`
   @media (max-width: 768px) {
-    display: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-weight: bold;
   }
 
   @media (min-width: 768px) {
     width: 100%;
     height: 70px;
-    font-size: 18px;
     font-weight: bold;
     text-align: center;
     align-items: center;
@@ -23,7 +28,7 @@ const Container = styled.div`
   @media (min-width: 1024px) {
     width: 100%;
     height: 70px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
     align-items: center;
@@ -37,6 +42,12 @@ const MenuList = styled.ul`
     display: inline;
     margin: 4px;
     text-decoration: none;
+
+    @media (min-width: 768px) {
+      display: inline;
+      margin: 4px;
+      text-decoration: none;
+    }
 
     @media (min-width: 1024px) {
       display: inline;
@@ -92,7 +103,7 @@ const Menubar = () => {
         <MenuList><Link style={{textDecoration: 'none', color: 'black'}} to="/intro">프로젝트 소개글</Link></MenuList>
         <MenuList><Link style={{textDecoration: "none", color: "#000"}} to="/library">라이브러리</Link></MenuList>
         <MenuList><Link style={{textDecoration: "none", color: "#000"}} to="/review">독서감상문</Link></MenuList>
-        <MenuList><Link style={{textDecoration: "none", color: "#000"}} to="/community">커뮤니티</Link></MenuList>
+        <MenuList><Link style={{textDecoration: "none", color: "#000"}} to="/*">커뮤니티</Link></MenuList>
         <MenuLogoImg src={MenuLogo} />
         <Login><Link style={{textDecoration: "none", color: "#000"}} to="login">로그인</Link></Login>
         </ul>

@@ -4,15 +4,15 @@ import StarWale from "../images/starwale.png";
 import Github from "../logos/github.svg";
 import Velog from "../logos/blog.svg";
 import Email from "../logos/email.svg";
-const content = require('../content/intro.json');
+const data = require('../data/intro.json');
 
-const introTitle: string = content.title;
+const introTitle: string = data.title;
 
-const introBody: string = content.body.split("\n").map((line: string) => {
+const introBody: string = data.body.split("\n").map((line: string) => {
   return <p>{line}</p>;
 });
 
-const address: any = content.address;
+const address: any = data.address;
 
 const Container = styled.div`
   width: 60%;
